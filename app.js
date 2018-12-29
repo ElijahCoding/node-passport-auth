@@ -13,6 +13,8 @@ mongoose.connect(db, { userNewUrlParser: true })
 app.use(expressLayouts)
 app.set('view engine', 'ejs')
 
+app.use(express.urlencoded({ extended: false }))
+
 app.use('/', require('./routes'))
 app.use('/users', require('./routes/users'))
 
